@@ -17,7 +17,7 @@ t=''
 res=''
 a=''
 for i in s:
-  if i==' ':
+  if i ==' ':
     l.append(t)
     a=''
     for j in range(len(t)-1,-1,-1):
@@ -30,4 +30,4 @@ for i in s:
 if len(t)>0:
      res+=t[::-1]
      
-  
+print(res)
