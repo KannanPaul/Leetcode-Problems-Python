@@ -1,1 +1,33 @@
+'''
+Given a string s, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
 
+Example 1:
+Input: s = "Let's take LeetCode contest"
+Output: "s'teL ekat edoCteeL tsetnoc"
+
+Example 2:
+Input: s = "God Ding"
+Output: "doG gniD"
+'''
+
+#solution:
+s = "Let's take LeetCode contest"
+l=[]
+t=''
+res=''
+a=''
+for i in s:
+  if i==' ':
+    l.append(t)
+    a=''
+    for j in range(len(t)-1,-1,-1):
+      a+=t[j]
+    res+=a+' '
+    t=''
+  else:
+    t+=i
+
+if len(t)>0:
+     res+=t[::-1]
+     
+  
