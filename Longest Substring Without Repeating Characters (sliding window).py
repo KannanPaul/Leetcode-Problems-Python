@@ -32,3 +32,20 @@ for i in range(len(s)):
   charindex[s[i]]=i
         
 print(maxlen)
+
+#Solution 2:
+s = "abcabcbb"
+strindex={}
+l=0
+output=0
+for r in range(len(s)):
+  if s[r] not in strindex:
+    output=max(output,r-l+1)
+  else:
+    if strindex[s[r]] <l:
+      output=max(output,r-l+1)
+    else:
+      l=strindex[s[r]]+1
+  strindex[s[r]]=r
+  
+print(output)
