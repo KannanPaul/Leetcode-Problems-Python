@@ -18,7 +18,7 @@ Input: image = [[0,0,0],[0,0,0]], sr = 0, sc = 0, newColor = 2
 Output: [[2,2,2],[2,2,2]]
 '''
 
-#Solution:
+#Solution 1 - Depth First Search(DFS):
 image = [[1,1,1],[1,1,0],[1,0,1]]
 sr = 1
 sc = 1
