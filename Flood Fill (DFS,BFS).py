@@ -35,4 +35,11 @@ def dfs(i,j):
 if old != newColor:
   dfs(sr,sc)
 print(image)
- 
+
+#Solution 2 - Breadth First Search
+
+image = [[1,1,1],[1,1,0],[1,0,1]]
+sr = 1
+sc = 1
+newColor = 2
+
