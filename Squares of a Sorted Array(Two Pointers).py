@@ -11,7 +11,7 @@ Example 2:
 Input: nums = [-7,-3,2,3,11]
 Output: [4,9,9,49,121]
 '''
-#Solution:
+#Solution -1 :(Two Pointers - O(n) time complexity and O(1) auxillary space)
 
 answer = [0] * len(nums)
 l, r = 0, len(nums) - 1
