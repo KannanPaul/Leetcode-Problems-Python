@@ -19,10 +19,10 @@ Space complexity: O(r \cdot c)O(r⋅c)
 An additional O(r \cdot c)O(r⋅c) space is required to maintain the queue.
 
 def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:
-     import collections
-     q=collections.deque()
-     m=len(mat)
-     n=len(mat[0])
+    import collections
+    q=collections.deque()
+    m=len(mat)
+    n=len(mat[0])
         
     for i in range(m):
       for j in range(n):
@@ -39,4 +39,4 @@ def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:
            mat[newx][newy]=mat[x][y]+1
            q.append((newx,newy))
                     
-     return mat
+    return mat
