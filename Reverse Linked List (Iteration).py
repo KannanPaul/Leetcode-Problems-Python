@@ -15,6 +15,7 @@ Output: []
 '''
 
 #Solution - 1: (Iteration)
+#Time complexity -
 
 def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         prev= None
