@@ -20,7 +20,8 @@ Output: [[1]]
 '''
 
 #Solution - 1 : 
-# Time complexity -
+# Time Complexity: O(n!/k!(n-k)!), or mathematically n choose k.
+# Recursive Space Complexity: O(n!/k!(n-k)!)
 
 def combine(self, n: int, k: int) -> List[List[int]]:
         sol=[]
