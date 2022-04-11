@@ -15,4 +15,15 @@ Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (m
 Total amount you can rob = 2 + 9 + 1 = 12.
 '''
 
-#Solution 1 -
+#Solution 1 - Dynamic Programming
+#Time Complexity : O(N), just single iteration is performed from 2 to N to compute each dp[i].
+#Space Complexity : O(N), required for dp.
+
+def rob(self, nums: List[int]) -> int:
+        if len(nums)==1:
+            return nums[0]
+        dp=[*nums]
+        dp[1]=max(nums[0],nums[1])
+        for i in range(2,len(nums)):
+            dp[i]=max(dp[i-1],nums[i]+dp[i-2])
+        return dp[-1]
