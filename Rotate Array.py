@@ -19,7 +19,25 @@ rotate 1 steps to the right: [99,-1,-100,3]
 rotate 2 steps to the right: [3,99,-1,-100]
 '''
 
-#Solution:
+#Solution 1:  
 
 k = k % len(nums)
 nums[:] = nums[-k:] + nums[:-k]
+
+#Solution 2:  O(n)-time complexity ,O(1)-space complexity
+
+def reverse(nums,i,j):
+            while i <=j:
+                nums[i],nums[j]=nums[j],nums[i]
+                i+=1
+                j-=1
+        
+        if k > len(nums):
+            k %= len(nums)
+            
+        if k>0:
+            reverse(nums,0, len(nums)-1)
+            reverse(nums,0,k-1)
+            reverse(nums,k,len(nums)-1)
+        
+        return nums
