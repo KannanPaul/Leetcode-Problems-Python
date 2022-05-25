@@ -24,6 +24,7 @@ for fast in range(n):
 print(nums)
 
 solution 2: O(n)-time complexity, O(1)-space complexity
+    def moveZeroes(self, nums: List[int]) -> None:
         i=0
         j=0
         n=len(nums)
@@ -35,3 +36,14 @@ solution 2: O(n)-time complexity, O(1)-space complexity
             j+=1
             
         return nums
+      
+solution 3:
+  def moveZeroes(self, nums: List[int]) -> None:
+        n=len(nums)
+        last_zero=0
+        for i in range(n):
+            if nums[i] !=0:
+                nums[i],nums[last_zero]=nums[last_zero],nums[i]
+                last_zero+=1
+        return nums
+        
