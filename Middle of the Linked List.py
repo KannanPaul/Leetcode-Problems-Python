@@ -13,10 +13,10 @@ Output: [4,5,6]
 Explanation: Since the list has two middle nodes with values 3 and 4, we return the second one.
 '''
 
-#solution 1:
+#solution 1: Output to Array
 #Complexity Analysis
-   #Time Complexity: O(N)O(N)O(N), where NNN is the number of nodes in the given list.
-   #Space Complexity: O(N)O(N)O(N), the space used by A.
+   #Time Complexity: O(N), where N is the number of nodes in the given list.
+   #Space Complexity: O(N), the space used by A.
 
 # Definition for singly-linked list.
 # class ListNode:
@@ -33,6 +33,16 @@ def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
           
        return r[m]
 
-#solution 2:
+#solution 2: Fast and Slow Pointer
 
+#Complexity Analysis
+    #Time Complexity: O(N), where N is the number of nodes in the given list.
+    #Space Complexity: O(1), the space used by slow and fast. 
 
+      def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        slow=fast=head
+        while fast and fast.next:
+            slow=slow.next
+            fast=fast.next.next
+            
+        return slow
