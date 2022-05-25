@@ -22,3 +22,16 @@ for fast in range(n):
     slow+=1
 
 print(nums)
+
+solution 2:
+        i=0
+        j=0
+        n=len(nums)
+        
+        while i<n and j<n:
+            if nums[j]!=0:
+                nums[j],nums[i]=nums[i],nums[j]
+                i+=1
+            j+=1
+            
+        return nums
