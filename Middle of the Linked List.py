@@ -13,7 +13,10 @@ Output: [4,5,6]
 Explanation: Since the list has two middle nodes with values 3 and 4, we return the second one.
 '''
 
-#solution:
+#solution 1:
+#Complexity Analysis
+   #Time Complexity: O(N)O(N)O(N), where NNN is the number of nodes in the given list.
+   #Space Complexity: O(N)O(N)O(N), the space used by A.
 
 # Definition for singly-linked list.
 # class ListNode:
@@ -29,3 +32,7 @@ def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
        m=len(r)//2
           
        return r[m]
+
+#solution 2:
+
+
