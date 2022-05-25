@@ -11,7 +11,7 @@ Example 2:
 Input: nums = [0]
 Output: [0]
 '''
-#Solution:
+#Solution 1 : O(n)-time complexity, O(1)-space complexity
 slow=0
 n=len(nums)
 for fast in range(n):
@@ -23,7 +23,7 @@ for fast in range(n):
 
 print(nums)
 
-solution 2:
+solution 2: O(n)-time complexity, O(1)-space complexity
         i=0
         j=0
         n=len(nums)
