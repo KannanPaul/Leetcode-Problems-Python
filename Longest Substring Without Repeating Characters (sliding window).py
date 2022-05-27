@@ -19,7 +19,11 @@ Explanation: The answer is "wke", with the length of 3.
 Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
 '''
 
-#Solution 1:
+#Solution 1: 
+    #Time complexity : O(n)
+    #Space complexity : O(min(m,n))
+    #Space complexity (dict): O(m). m is the size of the dictionary.
+
 s = "abcabcbb"
 charindex={}
 maxlen=0
