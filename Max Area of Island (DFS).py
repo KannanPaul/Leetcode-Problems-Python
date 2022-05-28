@@ -14,8 +14,8 @@ Output: 0
 '''
 #Solution -1:  Depth-First Search (Recursive)
 #Complexity Analysis
-#Time Complexity: O(R*C)O(R∗C), where RR is the number of rows in the given grid, and CC is the number of columns. We visit every square once.
-#Space complexity: O(R*C)O(R∗C), the space used by seen to keep track of visited squares, and the space used by the call stack during our recursion.
+#Time Complexity: O(R*C), where R is the number of rows in the given grid, and C is the number of columns. We visit every square once.
+#Space complexity: O(R*C), the space used by seen to keep track of visited squares, and the space used by the call stack during our recursion.
 
 def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
         m, n = len(grid), len(grid[0])
