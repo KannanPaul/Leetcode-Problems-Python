@@ -19,6 +19,9 @@ Output: [[2,2,2],[2,2,2]]
 '''
 
 #Solution 1 - Depth First Search(DFS):
+ #Time Complexity: O(N), where N is the number of pixels in the image. We might process every pixel.
+ #Space Complexity: O(N), the size of the implicit call stack when calling dfs.
+
 image = [[1,1,1],[1,1,0],[1,0,1]]
 sr = 1
 sc = 1
