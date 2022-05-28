@@ -26,6 +26,7 @@ newColor = 2
 old=image[sr][sc]
 m=len(image)
 n=len(image[0])
+
 def dfs(i,j):
   image[i][j]=newColor
   for x,y in ((i-1,j),(i+1,j),(i,j-1),(i,j+1)):
