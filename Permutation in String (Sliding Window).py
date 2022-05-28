@@ -11,9 +11,11 @@ Example 2:
 Input: s1 = "ab", s2 = "eidboaoo"
 Output: false
 
+'''
+
 #Solution 1:
-Time complexity - O(l1+l2) - where l1 & l2 - lenght of string s1 & s2
-Space complexity - O(1)
+#Time complexity - O(l1+l2) - where l1 & l2 - lenght of string s1 & s2
+#Space complexity - O(1)
    
    def checkInclusion(self, s1: str, s2: str) -> bool:
         l1=[0]*26
@@ -30,5 +32,4 @@ Space complexity - O(1)
             if l1==l2:
                 return True
         return False
-        
         
