@@ -26,3 +26,24 @@ def letterCasePermutation(self, s: str) -> List[str]:
                 
         backtrack()
         return ans
+
+
+# Solution 2- (Backtracking)
+# Tim Complexity is O(2^m*k), 
+# where m is number of letters and k is length of all string: we have 2^m solutions, each of them has length k, 
+# and what is important we never go to deadend, so all solutions we are trying to build will be added to final answer. 
+# Space complexity is O(2^m*k) as well.
+
+ def letterCasePermutation(self, s: str) -> List[str]:
+        ans=[]
+        
+        def dfs(i,built):
+            if i == len(s):
+                ans.append(built)
+                return
+            if s[i].isalpha():
+                dfs(i+1,built+s[i].lower())
+            dfs(i+1,built+s[i].upper())
+        
+        dfs(0,'')
+        return ans
