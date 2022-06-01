@@ -14,8 +14,21 @@ Input: head = []
 Output: []
 '''
 
-#Solution - 1: (Iteration)
-#Time complexity -
+#Solution - 1: Recursion
+#Time complexity - O(n)
+
+def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    return self._reverse(head) 
+    
+def _reverse(self, node, prev=None):
+    if not node:
+       return prev
+    n=node.next
+    node.next=prev
+    return self._reverse(n,node)
+
+#Solution - 2: (Iteration)
+#Time complexity - O(n)
 
 def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         prev= None
