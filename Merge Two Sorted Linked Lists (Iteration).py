@@ -16,11 +16,27 @@ Input: list1 = [], list2 = [0]
 Output: [0]
 '''
 
-#Solution -1 :(Iteration)
+#Solution -1 : Recursion
+# Time complexity - O(n)
+# Space complexity - O(1)
+
+ def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        if not list1 or not list2:
+            return list1 or list2
+        
+        if list1.val <list2.val:
+            list1.next=self.mergeTwoLists(list1.next,list2)
+            return list1
+        
+        else:
+            list2.next=self.mergeTwoLists(list1,list2.next)
+            return list2
+        
+#Solution -2 :(Iteration)
 # dummy & cur pointer explanation -> https://stackoverflow.com/questions/58715870/explanation-about-dummy-nodes-and-pointers-in-linked-lists#:~:text=1%20Answer&text=dummy%20and%20cur%20both%20point,because%20it's%20the%20same%20list.&text=you're%20not%20creating%20a,pointer%20down%20the%20existing%20list
 
 # Time complexity - O(n)
-
+# Space complexity -
 
 def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         dummy=cur= ListNode(0)
