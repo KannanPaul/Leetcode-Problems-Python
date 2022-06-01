@@ -19,7 +19,7 @@ Output: [0]
 #Solution -1 :(Iteration)
 # dummy & cur pointer explanation -> https://stackoverflow.com/questions/58715870/explanation-about-dummy-nodes-and-pointers-in-linked-lists#:~:text=1%20Answer&text=dummy%20and%20cur%20both%20point,because%20it's%20the%20same%20list.&text=you're%20not%20creating%20a,pointer%20down%20the%20existing%20list
 
-# Time complexity - 
+# Time complexity - O(n)
 
 
 def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
