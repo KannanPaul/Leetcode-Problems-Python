@@ -20,7 +20,7 @@ Output: 1
 # Space complexity - O(1)
 
 def singleNumber(self, nums: List[int]) -> int:
-        s=0
+        singlenum=0
         for i in nums:
-            s^=i
-        return s
+            singlenum^=i
+        return singlenum
