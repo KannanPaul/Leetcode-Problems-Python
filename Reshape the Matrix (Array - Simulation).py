@@ -32,6 +32,9 @@ Constraints:
 '''
 
 # Solution 1 :
+# Time Complexity : O(n*m) where n = no. of rows & m = no. of columns
+# Space Complexity : O(n*m) where n = no. of rows & m = no. of columns
+
 def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
         flat = []
         newMat = []
