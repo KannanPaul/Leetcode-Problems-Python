@@ -13,7 +13,7 @@ Output: false
 
 '''
 
-# Solution 1:
+# Solution 1 : Stack (Interviewer expects this solution)
 
 # Time: O(N), where N is the number of nodes in the BST.
 # Space: O(H), where H is the height of the BST. The size of stack is up to O(H).
