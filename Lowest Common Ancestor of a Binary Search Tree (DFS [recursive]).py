@@ -24,7 +24,7 @@ Output: 2
 
 '''
 
-# Solution 1:
+# Solution 1 : DFS recursive
 # Time Complexity: O(n) &  Space Complexity : O(n) where n  - no. of nodes
 
 def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
