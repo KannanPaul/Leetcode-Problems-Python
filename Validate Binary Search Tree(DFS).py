@@ -36,5 +36,15 @@ def isValidBST(self, root: Optional[TreeNode]) -> bool:
             return dfs(node.left, low, node.val) and dfs(node.right, node.val, high)
         return dfs(root, -float('inf'), float('inf'))
 
+# Solution 2 : Iterative 
+# Time complexity is O(n) to traverse every node of our tree. Space complexity is O(n) - size of tree
 
-
+ def iterative(self, root):
+        if not root: return True
+        stack = [(root, -float('inf'), float('inf'))]
+        while len(stack):
+            node, left, right = stack.pop()
+            if node.val <= left or node.val >= right: return False
+            if node.left: stack.append((node.left, left, node.val))
+            if node.right: stack.append((node.right, node.val, right))
+        return True
