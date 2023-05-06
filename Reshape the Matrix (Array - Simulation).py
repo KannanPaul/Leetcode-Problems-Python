@@ -48,3 +48,66 @@ def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]
             for index in range(r):
                 newMat.append(flat[index * c : index * c + c])
             return newMat
+
+           
+# Solution 2 :
+ def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
+        m = len(mat)
+        n = len(mat[0])
+        result = [[]]
+        if r * c != m*n:
+            return mat
+
+        for i in range(m):
+            for j in range(n):
+                if len(result[-1]) < c:
+                    result[-1] = result[-1]+[mat[i][j]]
+                else:
+                    result= result +[[mat[i][j]]]
+        
+        return result
+       
+       
+ # Solution 3 :
+ 
+ def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
+        temp = []
+        for row in mat:
+            for col in row:
+                temp = temp + [col]
+        
+        if len(temp) != r*c:
+            return mat
+         
+        res=[[]]
+        for value in temp:
+            if len(res[-1]) < c:
+                res[-1] = res[-1] + [value]
+            else:
+                res =  res + [[value]]
+        return res
+       
+ # Solution 4 :
+ 
+ def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
+        values=[]
+        res=[]
+        if r*c != len(mat)*len(mat[0]):
+            return  mat
+        for row in mat:
+            for col in row:
+                values.append(col)
+        index = 0
+        cc = c
+        while index < len(values):
+            temp = []
+            while cc > 0:
+                t.append(values[index])
+                cc -= 1
+                index += 1
+            res.append(t)
+            cc = c
+        return res
+       
+       
+ 
