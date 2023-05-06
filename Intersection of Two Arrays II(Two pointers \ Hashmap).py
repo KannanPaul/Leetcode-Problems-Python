@@ -49,6 +49,9 @@ def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
       
 # Solution 2 (HashMap):
 
+# Time Complexity :  O(nums1) + O(nums2)
+# Space Complexity :  O(nums1) + O(nums2)
+
 def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
         n1dict = dict()
         for i in nums1:
@@ -61,6 +64,5 @@ def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
             if j in n1dict and n1dict[j]>0:
                 res = res + [j]
                 n1dict[j] -=1
-
-        
+                
         return res
