@@ -37,3 +37,12 @@ Constraints:
 # Solution 1 :
 # Time complexity : o(n) & Space complexity : o(n) where n - no. of nodes
 
+def hasCycle(self, head: Optional[ListNode]) -> bool:
+        nodeList = []
+        while head:
+            if head in nodeList:
+                return True
+            else:
+                nodeList.append(head)
+            head = head.next
+        return False
