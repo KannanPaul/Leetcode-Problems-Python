@@ -16,7 +16,7 @@ Output: []
 
 #Solution - 1: Recursion
 #Time complexity - O(n)
-# Space complexity - 
+# Space complexity - O(n)
 
 def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
     return self._reverse(head) 
