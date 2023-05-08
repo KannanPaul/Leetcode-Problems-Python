@@ -48,7 +48,7 @@ def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNod
 
 # Solution 2: (Recurion)
 # Time Complexity: O(N) --> Each Node in the list is visited once.
-# Space Complexity: O(N) --> Recursion Stack space
+# Space Complexity: O(N) --> It's amortized space complexity should be O(N) because recursion is using a stack space for every node.
 # Where, N = Length of the input list.
 
 def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
