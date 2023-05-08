@@ -28,9 +28,10 @@ Constraints:
 
 '''
 
-# Solution 1:
+# Solution 1: (Iteration)
 # Time complexity - O(n) --> Each Node in the list is visited once.
 # Space Complexity: O(1) --> Contant space is used for this solution
+# Where, N = Length of the input list.
 
 def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
         if not head:
@@ -44,3 +45,17 @@ def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNod
                 cur.next = head.next
             head = head.next
         return dummy.next
+
+# Solution 2: (Recurion)
+# Time Complexity: O(N) --> Each Node in the list is visited once.
+# Space Complexity: O(N) --> Recursion Stack space
+# Where, N = Length of the input list.
+
+def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+        if head is None :
+            return 
+        head.next = self.removeElements(head.next, val)
+        if head.val == val:
+            return head.next
+        else:
+            return head
