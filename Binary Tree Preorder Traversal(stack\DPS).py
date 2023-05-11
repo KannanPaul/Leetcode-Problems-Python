@@ -32,6 +32,8 @@ Follow up: Recursive solution is trivial, could you do it iteratively?
 
 # Time Complexity - O(n) 
 # Space Complexity - O(n) 
+# Usage of stack's LIFO feature:
+
 def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         stack=[root]
         res=[]
