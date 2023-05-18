@@ -42,28 +42,32 @@ Constraints:
 # Space Complexity : O(M) where M is the number of solutions
 
 def threeSum(self, nums: List[int]) -> List[List[int]]:
-        res=[]
+        ans = []
+        n = len(nums)
         nums.sort()
+       
+        for i in range(n):
+            if (i > 0 and nums[i] == nums[i-1]):
+                continue
+            low = i + 1
+            high = n -1
 
-        for i in range(len(nums)-2):
-            if i==0 or (i>0 and nums[i] != nums[i-1]):
-                low = i + 1
-                high = len(nums)-1
-                sum = 0 - nums[i]
             while low < high:
-                if nums[low] + nums[high] == sum:
-                    res.append([nums[i], nums[low], nums[high]])
-                    while low < high and nums[low] == nums[low + 1]:
-                            low += 1
-                    while low < high and nums[high] == nums[high - 1]:
-                            high -= 1
-                    low += 1
-                    high -= 1
-                elif nums[low]+ nums[high] < sum:
-                    low += 1
-                elif nums[low]+ nums[high] > sum:
-                    high -= 1
-        return res
+                sum = nums[i] + nums[low] + nums[high]
+                if sum < 0:
+                    low = low + 1
+                elif sum > 0:
+                    high = high - 1
+                else:
+                    ans = ans + [ [ nums[i] , nums[low] , nums[high] ] ]
+                    low = low + 1
+                    high = high -1
+
+                    while (low < high and nums[low] == nums[low - 1]):
+                        low = low + 1
+                    while (low < high and nums[high] == nums[high + 1]):
+                        high = high - 1
+        return ans
        
 # Solution 2 : Brute Force approach
 # Time complexity : O(n*n*n)log(no.of triplets) 
