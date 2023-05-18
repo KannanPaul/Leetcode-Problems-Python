@@ -81,3 +81,24 @@ def threeSum(self, nums: List[int]) -> List[List[int]]:
                         setTriplet.add(tuple(sorted([nums[i], nums[j], nums[k]])))
                     
         return setTriplet
+
+       
+  
+# Solution 3 : Brute Force approach - optimized
+# Time complexity : O(n*n)log(M) where M - adding values to set * M is varaible based on data
+# Space complexity : O(n) + 2*O(no. of triplets) - where n - no. of data in tempset
+
+def threeSum(self, nums: List[int]) -> List[List[int]]:
+        setTriplet = set()
+        ans = []
+        n = len(nums)
+
+        for i in range(n):
+            tempset = set()
+            for j in range(i+1, n):
+                thirdnum = -(nums[i] + nums[j])
+                if thirdnum in tempset:
+                    setTriplet.add(tuple(sorted([nums[i], nums[j], thirdnum])))
+                tempset.add(nums[j])
+                    
+        return setTriplet
