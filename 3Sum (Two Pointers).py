@@ -64,3 +64,20 @@ def threeSum(self, nums: List[int]) -> List[List[int]]:
                 elif nums[low]+ nums[high] > sum:
                     high -= 1
         return res
+       
+# Solution 2 : Brute Force approach
+# Time complexity : O(n*n*n)log(no.of triplets) 
+# Space complexity : 2*O(no. of triplets)
+
+def threeSum(self, nums: List[int]) -> List[List[int]]:
+        setTriplet = set()
+        ans = []
+        n = len(nums)
+
+        for i in range(n):
+            for j in range(i+1, n):
+                for k in range(j+1, n):
+                    if nums[i]+ nums[j] + nums[k] == 0:
+                        setTriplet.add(sorted(nums[i], nums[j], nums[k]]))
+                    
+        return setTriplet
