@@ -78,6 +78,6 @@ def threeSum(self, nums: List[int]) -> List[List[int]]:
             for j in range(i+1, n):
                 for k in range(j+1, n):
                     if nums[i]+ nums[j] + nums[k] == 0:
-                        setTriplet.add(sorted(nums[i], nums[j], nums[k]]))
+                        setTriplet.add(tuple(sorted([nums[i], nums[j], nums[k]])))
                     
         return setTriplet
