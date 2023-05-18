@@ -38,7 +38,7 @@ Constraints:
 '''
 
 # Solution 1:
-# Time Complexity : O( N*N)
+# Time Complexity : O(nlogn)+ O(n*n) - where nlogn is sorting the list
 # Space Complexity : O(M) where M is the number of solutions
 
 def threeSum(self, nums: List[int]) -> List[List[int]]:
