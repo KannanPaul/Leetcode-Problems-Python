@@ -29,20 +29,18 @@ Constraints:
 # Space Complexity : O(n)
 
 def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-        res = []
-        if len(intervals) == 0 or intervals == None:
-            return []
+        mergedIntervals = []
+        if len(intervals) == 0:
+            return mergedIntervals
+
         intervals.sort(key =lambda x: x[0])
-        start = intervals[0][0]
-        end = intervals[0][1]
+        tempInterval = intervals[0]
 
-        for i in intervals:
-            if i[0] <= end:
-                end = max(end, i[1])
+        for interval in intervals:
+            if interval[0] <= tempInterval[1]:
+                tempInterval[1] = max(interval[1],tempInterval[1])
             else:
-                res.append([start,end])
-                start = i[0]
-                end = i[1]
-        res.append([start,end])
-
-        return res
+                mergedIntervals = mergedIntervals + [tempInterval]
+                tempInterval = interval
+        mergedIntervals = mergedIntervals + [tempInterval]
+        return mergedIntervals
