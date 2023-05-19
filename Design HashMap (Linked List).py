@@ -39,6 +39,15 @@ Constraints:
 '''
 
 # Solution 1 :
+'''
+Complexity:
+
+    Time:
+        init: O(BUCKET_SIZE), where BUCKET_SIZE is the size of buckets.
+        put, get, remove: O(1) in average, O(min(N, MAX_RANGE_VALUE/BUCKET_SIZE)) in the worst case.
+    Space:
+        O(BUCKET_SIZE + N), where N is number of elements that we have added into our HashTable.
+'''
 
 class ListNode():
     def __init__(self, key, val):
