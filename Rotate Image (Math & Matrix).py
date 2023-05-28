@@ -28,9 +28,9 @@ Constraints:
 '''
 Let (M) be the number of cells in the grid.
 
-    Time complexity : O(M)\mathcal{O}(M)O(M). We perform two steps; transposing the matrix, and then reversing each row. Transposing the matrix has a cost of O(M)\mathcal{O}(M)O(M) because we're moving the value of each cell once. Reversing each row also has a cost of O(M)\mathcal{O}(M)O(M), because again we're moving the value of each cell once.
+    Time complexity : O(n*n) + O(n*n)
 
-    Space complexity : O(1)\mathcal{O}(1)O(1) because we do not use any other additional data structures.
+    Space complexity : O(1)
 '''
 
 def rotate(self, matrix: List[List[int]]) -> None:
@@ -51,4 +51,30 @@ def rotate(self, matrix: List[List[int]]) -> None:
         for i in range(row):
             for j in range(row//2):
                 matrix[i][j], matrix[i][-j-1] = matrix[i][-j-1], matrix[i][j]
+
+# Solution 2 : Changing rows postion & transpose the matrix
+
+def rotate(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        l = 0
+        r = len(matrix) - 1
+
+        while l <= r:
+            matrix[l], matrix[r] = matrix[r], matrix[l]
+            l += 1 
+            r -= 1
+
+        
+        for i in range(len(matrix)):
+            for j in range(i,len(matrix[0])):
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+        
+        
+# Other Problems
+# Rotate 180 degree
+
+
+
         
