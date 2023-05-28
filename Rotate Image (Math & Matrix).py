@@ -90,4 +90,24 @@ while l<=r:
     l += 1
     r -= 1
 
-matrix = [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+# Output:
+# matrix = [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+
+# Rotate 270 degree
+# matrix = [[1,2,3],[4,5,6],[7,8,9]]
+
+for i in range(len(matrix)):
+    for j in range(i,len(matrix[0])):
+        matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+        
+l = 0
+r = len(matrix) - 1
+
+while l <= r:
+    matrix[l], matrix[r] = matrix[r], matrix[l]
+    l += 1 
+    r -= 1
+    
+# Output:
+# matrix = [[3, 6, 9], [2, 5, 8], [1, 4, 7]]
+
