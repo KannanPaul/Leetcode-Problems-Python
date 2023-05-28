@@ -76,5 +76,18 @@ def rotate(self, matrix: List[List[int]]) -> None:
 # Rotate 180 degree
 
 
+# matrix = [[1,2,3],[4,5,6],[7,8,9]]
+ 
+for i in range(len(matrix)):
+    for j in range(len(matrix[0])//2):
+        matrix[i][j], matrix[i][-j-1] = matrix[i][-j-1], matrix[i][j]
+         
+l = 0
+r = len(matrix) - 1
 
-        
+while l<=r:
+    matrix[l],matrix[r] = matrix[r],matrix[l]
+    l += 1
+    r -= 1
+
+matrix = [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
