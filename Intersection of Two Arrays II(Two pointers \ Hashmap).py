@@ -25,6 +25,13 @@ Constraints:
 # Solution 1 (Two Pointers):
 
 # Time Complexity : If the lists are sorted, then the time complexity is O(N), Otherwise it is O(NlgN)
+# time complexity of the sorted() function is O(n log n) in the average case and worst case, 
+# O(nlogn + mlogm + n + m) - We sort both the arrays whose size is n and m. And then we iterate linearly on both the arrays.
+# O(1) < O(logn) < O(n) < O(nlogn) holds true.
+# O(n)<O(nlogn) 
+# O(n*log n) + O(m*log m) = O(n*log n)    
+# O((n+m)log(n+m)) = O(N*logN)           
+
 # Space Complexity : O(nums1) + O(nums2)
 
 def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
