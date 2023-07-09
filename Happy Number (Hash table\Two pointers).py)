@@ -1,0 +1,92 @@
+'''
+Write an algorithm to determine if a number n is happy.
+
+A happy number is a number defined by the following process:
+
+    Starting with any positive integer, replace the number by the sum of the squares of its digits.
+    Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.
+    Those numbers for which this process ends in 1 are happy.
+
+Return true if n is a happy number, and false if not.
+
+ 
+
+Example 1:
+
+Input: n = 19
+Output: true
+Explanation:
+12 + 92 = 82
+82 + 22 = 68
+62 + 82 = 100
+12 + 02 + 02 = 1
+
+Example 2:
+
+Input: n = 2
+Output: false
+
+ 
+
+Constraints:
+
+    1 <= n <= 231 - 1
+
+'''
+
+# Solution 1: (Math + Hash Table)
+
+# Time complexity: O(log n), where n is the input number. This is because in each iteration, we divide n by 10, effectively reducing the number of digits in n by a factor of 10.
+# Space complexity: O(log n) as well, due to the storage of unique numbers in the set during the process.
+
+def isHappy(self, n: int) -> bool:
+        occ=set()
+        m=n
+        while m != 1 :
+            m=self.digit_square(m)            
+            if m in occ: return False
+            occ.add(m)
+        
+        return True
+    
+        
+    def digit_square(self, num):
+        base = 1
+        result = 0
+        while num % base < num:
+            digit = num // base % 10
+            result += digit * digit
+            base *= 10
+
+        return result
+
+# Solution 2: (Two pointers)
+# Time Complexity : O(logN) where N is the number.
+# Space Complexity : O(1), Constant space.
+
+def isHappy(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        def digitSquare(num):
+            sum = 0
+            while num != 0:
+                sum += ((num % 10)**2)
+                num = num // 10
+            return sum
+
+        slow = n
+        fast = digitSquare(n)
+        
+        while fast != 1 and fast != slow:
+            slow = digitSquare(slow)
+            fast = digitSquare(digitSquare(fast))
+
+        if fast == 1:
+            return True
+        else:
+            return False
+  
+
+
