@@ -123,4 +123,32 @@ def backspaceCompare(self, s, t):
                     p2 -= 1
         return True
 
+# Solution 4 : (Optimal solution using Two Pointers)
+# Time complexity: O(s+t)
+# Space complexity: O(1)
+# where S & T - lenth of given strings S, T
 
+def backspaceCompare(self, s: str, t: str) -> bool:
+        def nextValidIndex( string, index):
+            backcount = 0
+            while backcount >= 0:
+                index -= 1
+                if index < 0:
+                    return -1
+                if string[index] == "#":
+                    backcount += 1
+                else:
+                    backcount -= 1
+            return index
+
+        p1 = len(s)
+        p2 = len(t)
+
+        while p1 >= 0 and p2 >= 0:
+            p1 = nextValidIndex(s, p1)
+            p2 = nextValidIndex(t, p2)
+            if p1 >= 0 and p2 >= 0 and s[p1] != t[p2]:
+                return False
+        return p1 < 0 and p2 < 0
+
+    
