@@ -35,3 +35,32 @@ def dfs(root, depth):
                 return depth
             return max(dfs(root.left,depth+1),dfs(root.right,depth+1))
         return dfs(root, 0)
+
+# Solution 2: DFS: Iterative, In-Order Traversal
+def maxDepth(self, root: Optional[TreeNode]) -> int:
+        stack = [[root, 1]]
+        res = 0
+
+        while stack:
+            node, depth = stack.pop()
+            if node:
+                res = max(res, depth)
+                stack.append([node.left, depth+1])
+                stack.append([node.right, depth+1])
+        return res
+# Solution 3: (Iterative - BFS) - BFS: Iterative, Level Order Traversal
+
+def maxDepth(self, root: Optional[TreeNode]) -> int:
+        depth = 0
+        level = [root] if root else []
+        while level:
+            depth += 1
+            queue = []
+            for node in level:
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+                level = queue
+        return depth
+            
