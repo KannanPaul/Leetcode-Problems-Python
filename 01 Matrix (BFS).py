@@ -11,7 +11,7 @@ Input: mat = [[0,0,0],[0,1,0],[1,1,1]]
 Output: [[0,0,0],[0,1,0],[1,2,1]]
 '''
 
-#Solution 1 - (Depth First Search)
+#Solution 1 - (Breadth First Search)
 #Complexity Analysis
 #Time complexity: O(r⋅c)
 #Since, the new cells are added to the queue only if their current distance is greater than the calculated distance, cells are not likely to be added multiple times.
