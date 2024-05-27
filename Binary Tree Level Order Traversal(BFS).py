@@ -22,7 +22,7 @@ Constraints:
     -1000 <= Node.val <= 1000
 '''
 
-# Solution 1 : (Bread)
+# Solution 1 : (Breath First Search)
 
 # Time Complexity: O(N) where N is the number of nodes in the binary tree
 # Space Complexity: O(N) for our answer array
