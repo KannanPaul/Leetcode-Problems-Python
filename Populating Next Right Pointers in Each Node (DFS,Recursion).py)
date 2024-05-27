@@ -38,7 +38,7 @@ def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
 Time Complexity : O(N), we only traverse each node once, basically doing a standard BFS.
 Space Complexity : O(1), only constant extra space is being used
 
- def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
+def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
         if not root:
             return None
         cur=root
