@@ -15,9 +15,18 @@ Input: nums = [1]
 Output: 1
 '''
 
-#Solution 1 : Bits Manipulation
+#Solution 1 : Bits Manipulation 
 # Time complexity - O(n)
 # Space complexity - O(1)
+
+Optimal Approach(Using XOR): 
+
+Two important properties of XOR are the following:
+
+XOR of two same numbers is always 0 i.e. a ^ a = 0. ←Property 1.
+XOR of a number with 0 will result in the number itself i.e. 0 ^ a = a.  ←Property 2
+
+So, if we perform the XOR of all the numbers of the array elements, we will be left with a single number.
 
 def singleNumber(self, nums: List[int]) -> int:
         singlenum=0
