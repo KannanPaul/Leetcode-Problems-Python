@@ -134,4 +134,6 @@ n = len(arr)
 maxSum = maxSubarraySum(arr, n)
 print("The maximum subarray sum is:", maxSum)
 
+https://www.geeksforgeeks.org/problems/max-sum-in-sub-arrays0824/0?category&utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=max-sum-in-sub-arrays
+
 
