@@ -87,7 +87,7 @@ def maxSubArray(self, nums):
         return maxSubArray(nums, 0, len(nums)-1)
 
 
-# For the same question to Print Maximum Subarray
+# Print subarray with maximum subarray sum (extended version of above problem
 Solution:
 
 import sys
