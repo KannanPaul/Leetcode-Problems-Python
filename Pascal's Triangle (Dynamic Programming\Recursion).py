@@ -39,6 +39,8 @@ def generate(self, numRows: int) -> List[List[int]]:
 
 
 Solution 2:
+Time complexity : O(numRows^2) 
+Space complexity : O(numRows)
 
 def generate(self, numRows: int) -> List[List[int]]:
         res = [[1]]
@@ -52,6 +54,8 @@ def generate(self, numRows: int) -> List[List[int]]:
         return res
 
 Solution 3: Recursion
+Time complexity : O(numRows^2) 
+Space complexity : O(numRows^2) space due to storing the entire triangle or previous rows in recursion.
 
  def generate(self, numRows: int) -> List[List[int]]:
         if numRows == 0:
