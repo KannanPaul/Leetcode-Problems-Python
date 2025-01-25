@@ -44,3 +44,30 @@ def merge(self, intervals: List[List[int]]) -> List[List[int]]:
                 tempInterval = interval
         mergedIntervals = mergedIntervals + [tempInterval]
         return mergedIntervals
+
+Solution 2:
+Complexity Analysis
+
+Time Complexity: O(N*logN) + O(N), where N = the size of the given array.
+Reason: Sorting the given array takes  O(N*logN) time complexity. Now, after that, we are just using a single loop that runs for N times. So, the time complexity will be O(N).
+
+Space Complexity: O(N), as we are using an answer list to store the merged intervals. Except for the answer array, we are not using any extra space.
+ 
+def mergeOverlappingIntervals(arr: List[List[int]]) -> List[List[int]]:
+    n = len(arr) # size of the array
+
+    # sort the given intervals:
+    arr.sort()
+
+    ans = []
+
+    for i in range(n):
+        # if the current interval does not
+        # lie in the last interval:
+        if not ans or arr[i][0] > ans[-1][1]:
+            ans.append(arr[i])
+        # if the current interval
+        # lies in the last interval:
+        else:
+            ans[-1][1] = max(ans[-1][1], arr[i][1])
+    return ans
