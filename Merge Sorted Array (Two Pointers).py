@@ -99,3 +99,58 @@ Sample Output 2:
 
 Solution Reference: https://www.geeksforgeeks.org/merge-two-sorted-arrays-o1-extra-space/
 
+
+Solution 1: Using Insert of Insertion Sort
+Time Complexity: O(m * n), where n and m are sizes of a[] and b[] respectively.
+Auxiliary Space: O(1)
+
+def mergeTwoSortedArraysWithoutExtraSpace(a : List[int], b : List[int]) -> int:
+    for i in range(len(b) - 1, -1, -1):
+        if a[-1] > b[i]:
+            last = a[-1]
+            j = len(a) - 2
+            while j >= 0 and a[j] > b[i]:
+                a[j + 1] = a[j]
+                j -= 1
+            
+            a[j + 1] = b[i]
+            b[i] = last
+
+
+Solution 2: By Swap and Sort
+Time Complexity: O(min(n, m)) + O(n*logn) + O(m*logm), where n and m are the sizes of the given arrays.
+Reason: O(min(n, m)) is for swapping the array elements. And O(n*logn) and O(m*logm) are for sorting the two arrays.
+
+Space Complexity: O(1) as we are not using any extra space.
+
+def mergeTwoSortedArraysWithoutExtraSpace(a : List[int], b : List[int]) -> int:
+    n=len(a)
+    m=len(b)
+    left = n - 1
+    right = 0
+
+    # Swap the elements until arr1[left] is smaller than arr2[right]:
+    while left >= 0 and right < m:
+        if a[left] > b[right]:
+            a[left], b[right] = b[right], a[left]
+            left -= 1
+            right += 1
+        else:
+            break
+
+    # Sort arr1[] and arr2[] individually:
+    a.sort()
+    b.sort()
+
+
+
+Solution 3:  Using gap method): 
+This gap method is based on a sorting technique called shell sort. The intuition of this method is simple. 
+
+Time Complexity: O((n+m)*log(n+m)), where n and m are the sizes of the given arrays.
+Reason: The gap is ranging from n+m to 1 and every time the gap gets divided by 2. So, the time complexity of the outer loop will be O(log(n+m)). Now, for each value of the gap, the inner loop can at most run for (n+m) times. So, the time complexity of the inner loop will be O(n+m). So, the overall time complexity will be O((n+m)*log(n+m)).
+
+Space Complexity: O(1) as we are not using any extra space.
+
+
+            
