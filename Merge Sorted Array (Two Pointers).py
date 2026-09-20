@@ -144,7 +144,7 @@ def mergeTwoSortedArraysWithoutExtraSpace(a : List[int], b : List[int]) -> int:
 
 
 
-Solution 3:  Using gap method): 
+Solution 3:  Using gap method): if nums1 and nums2 are tightly packed with no extra space, then use this method
 This gap method is based on a sorting technique called shell sort. The intuition of this method is simple. 
 
 Time Complexity: O((n+m)*log(n+m)), where n and m are the sizes of the given arrays.
